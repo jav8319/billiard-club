@@ -1,0 +1,10 @@
+/node_modules
+.env
+.DS_Store
+# Ignore node_modules
+node_modules/
+
+# Ignore package-lock.json (optional)
+package-lock.json
+server/dist/
+
