@@ -1,0 +1,47 @@
+:root {
+  /* General Colors */
+  --background-color-dark-custom: #000000;
+  --background-color-light-custom: #5f4231;
+  --primary-text-color-custom: #ffffff;
+  --highlight-color-custom: #ffcc00;
+  --highlight-hover-color-custom: #002afa;
+  --box-shadow-color-custom: rgba(0, 0, 0, 0.2);
+  --box-shadow-hover-color-custom: rgba(0, 0, 0, 0.3);
+
+  /* Button and Link Colors */
+  --button-bg-color-custom: #002afa;
+  --button-hover-bg-color-custom: #ffcc00;
+  --button-hover-text-color-custom: #002afa;
+
+  /* Footer Colors */
+  --footer-background-dark-custom: #5f4231;
+  --footer-background-light-custom: #000000;
+  --footer-text-color-custom:#ffffff;
+  --footer-link-color-custom: #ffcc00;
+  --footer-link-hover-color-custom: #d1b9dd;
+
+  /* Card Overlay Colors */
+  --overlay-bg-color-custom: rgba(0, 0, 0, 0.6);
+  --overlay-text-color-custom: #2bff00;
+
+  /* Social Media Colors */
+  --youtube-color-custom: #FF0000;
+  --facebook-color-custom: #1877F2;
+  --instagram-color-custom: #C13584;
+  --twitter-color-custom: #ffffff;
+
+  /* Card Background */
+  --card-background-color-custom: #a3a0a0;
+}
+
+
+/* reset.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
