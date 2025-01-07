@@ -1,5 +1,5 @@
 import React from 'react';
-import BilliardClubApp from './Home';
+import BilliardClubApp from './pages/Home';
 
 
 function App() {
