@@ -109,129 +109,130 @@ function BilliardClubApp() {
 
   return (
     <div className="container-fluid mt-4 custom-div text-light">
-    <div className="mb-3 custom-input">
-      <div className="input-group">
-        <input
-        type="text"
-        className="form-control"
-        value={plyr}
-        onChange={(e) => setplyr(e.target.value)}
-        placeholder="Enter player name"
-        />
-        <button className="btn btn-primary" onClick={handleAddPlayer}>
-        Add Player
-        </button>
-      </div>
-    </div>
-    <div className="d-flex flex-column align-items-center mb-4">
-      <div className="d-flex justify-content-center gap-2">
-        <button
-          className="btn p-1 btn-success"
-          onClick={startMatch}
-          disabled={isMatchOngoing}
-          style={{ boxShadow: '0px 4px 6px rgba(51, 255, 0, 0.5)' }}
-        >
-        Start Match
-        </button>
-        <button
-          className="btn p-1 btn-warning"
-          onClick={clearAllScores}
-          disabled={isMatchOngoing}
-          style={{ boxShadow: '0px 4px 6px rgba(255, 230, 0, 0.71)' }}
-        >
-        Clear All Scores
-        </button>
-        <button
-          className="btn p-1 btn-danger"
-          onClick={startAllOver}
-          style={{ boxShadow: '0px 4px 6px rgba(255, 0, 0, 0.5)' }}
-        >
-        Start All Over
-        </button>
-      </div>
-    </div>
-    <div className="mb-4 px-2 ">
-      <div className="d-flex justify-content-space-around customdiv">
-        {!isMatchOngoing&&<img src={image} alt="billiard" style={{height:'20px',marginBottom:'20px'}}/>}
-        {isMatchOngoing && <h3 className='h3custom' style={{ color: '#f0ad4e'}}>!Pick the winner!</h3>} 
-      </div>
-      {match.length >= 2 && (
-        <div className="player-section">
-          <div className="customcheckbox">
-            <h3 className="div2">{match[0].player.plyr}</h3>
-            <input
-              type="checkbox"
-              className="form-check-input p-1 mx-2"
-              checked={match[0].score === 1}
-              onChange={() => handleWinnerChange(0)}
-              disabled={!isMatchOngoing}
-              style={{
-              transform: "scale(1.8)",
-              }}
-            />
-            <h3 className="div3">{match[0].player.plyr}</h3>
-          </div>
-          <h2 className="vselement">--vs--</h2>
-          <div className="customcheckbox">
-            <input
-              type="checkbox"
-              className="form-check-input p-1 mx-2"
-              checked={match[1].score === 1}
-              onChange={() => handleWinnerChange(1)}
-              disabled={!isMatchOngoing}
-              style={{
-              transform: "scale(1.8)",
-              }}
-            />
-            <h3 className='div1'>{match[1].player.plyr}</h3>
-          </div>
+      <div className="mb-3 custom-input">
+        <div className="input-group">
+          <input
+          type="text"
+          className="form-control"
+          value={plyr}
+          onChange={(e) => setplyr(e.target.value)}
+          placeholder="Enter player name"
+          />
+          <button className="btn btn-primary" onClick={handleAddPlayer}>
+          Add Player
+          </button>
         </div>
-      )}
-    </div>
-    <div className="mb-4 px-2 ">
-      <div className="d-flex justify-content-between">
-        <h3>Players</h3>
-        {lastMatch.length === 2 && (
-          <div className="d-flex flex-column justify-content-between">
-            <div>
-              <code>{lastMatch[0].winner}🏆 </code>
-              <code>{lastMatch[0].loser}😞</code>
+      </div>
+      <div className="d-flex flex-column align-items-center mb-4">
+        <div className="d-flex justify-content-center gap-2">
+          <button
+            className="btn p-1 btn-success"
+            onClick={startMatch}
+            disabled={isMatchOngoing}
+            style={{ boxShadow: '0px 4px 6px rgba(51, 255, 0, 0.5)' }}
+          >
+          Start Match
+          </button>
+          <button
+            className="btn p-1 btn-warning"
+            onClick={clearAllScores}
+            disabled={isMatchOngoing}
+            style={{ boxShadow: '0px 4px 6px rgba(255, 230, 0, 0.71)' }}
+          >
+          Clear All Scores
+          </button>
+          <button
+            className="btn p-1 btn-danger"
+            onClick={startAllOver}
+            style={{ boxShadow: '0px 4px 6px rgba(255, 0, 0, 0.5)' }}
+          >
+          Start All Over
+          </button>
+        </div>
+      </div>
+      <div className="mb-4 px-2 ">
+        <div className="d-flex justify-content-space-around customdiv">
+          {!isMatchOngoing&&<img src={image} alt="billiard" style={{height:'20px',marginBottom:'20px'}}/>}
+          {isMatchOngoing && <h3 className='h3custom' style={{ color: '#f0ad4e'}}>!Pick the winner!</h3>} 
+        </div>
+        {match.length >= 2 && (
+          <div className="player-section">
+            <div className="customcheckbox">
+              <h3 className="div2">{match[0].player.plyr}</h3>
+              <input
+                type="checkbox"
+                className="form-check-input p-1 mx-2"
+                checked={match[0].score === 1}
+                onChange={() => handleWinnerChange(0)}
+                disabled={!isMatchOngoing}
+                style={{
+                transform: "scale(1.8)",
+                }}
+              />
+              <h3 className="div3">{match[0].player.plyr}</h3>
             </div>
-            <code>Last Match: {lastMatch[1].date}</code>
+            <h2 className="vselement">--vs--</h2>
+            <div className="customcheckbox">
+              <input
+                type="checkbox"
+                className="form-check-input p-1 mx-2"
+                checked={match[1].score === 1}
+                onChange={() => handleWinnerChange(1)}
+                disabled={!isMatchOngoing}
+                style={{
+                transform: "scale(1.8)",
+                }}
+              />
+              <h3 className='div1'>{match[1].player.plyr}</h3>
+            </div>
           </div>
         )}
       </div>
-      <ul className="list-group">
-        {playersRecord.sort((a, b) => a.plyr.localeCompare(b.plyr)).map((player, index) => (
-          <li
-            key={index}
-            className="list-group-item d-flex justify-content-between align-items-center"
-            style={{ backgroundColor: '#2c2c2e', color: 'white' }}
-          >
-            {player.plyr} (Games: {player.pys}, Wins: {player.w}, Losses: {player.l})
-            <button
-              className="btn btn-danger btn-sm"
-              disabled={
-              isMatchOngoing &&
-              match.some((entry) => entry.player.plyr === player.plyr && entry.isongoing)
-              }
-              onClick={() => removePlayer(player)}
+      <div className="mb-4 px-2 ">
+        <div className="d-flex justify-content-between">
+          <h3>Players</h3>
+          {lastMatch.length === 2 && (
+            <div className="d-flex flex-column justify-content-between">
+              <div>
+                <code>{lastMatch[0].winner}🏆 </code>
+                <code>{lastMatch[0].loser}😞</code>
+              </div>
+              <code>Last Match: {lastMatch[1].date}</code>
+            </div>
+          )}
+        </div>
+        <ul className="list-group">
+          {playersRecord.sort((a, b) => a.plyr.localeCompare(b.plyr)).map((player, index) => (
+            <li
+              key={index}
+              className="list-group-item d-flex justify-content-between align-items-center"
+              style={{ backgroundColor: '#2c2c2e', color: 'white' }}
             >
-              Remove
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-    {showModal&&
-      <div>
-        <DialogBox1stMtch
-        showModal={showModal} 
-        setShowModal={setShowModal}
-        setMatch={setMatch}
-      />
-    </div>}
-    <About/>
+              {player.plyr} (Games: {player.pys}, Wins: {player.w}, Losses: {player.l})
+              <button
+                className="btn btn-danger btn-sm"
+                disabled={
+                isMatchOngoing &&
+                match.some((entry) => entry.player.plyr === player.plyr && entry.isongoing)
+                }
+                onClick={() => removePlayer(player)}
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {showModal&&playersRecord.length>2&&
+        <div>
+          <DialogBox1stMtch
+          showModal={showModal} 
+          setShowModal={setShowModal}
+          setMatch={setMatch}
+          playersRecord={playersRecord}
+        />
+      </div>}
+      <About/>
     </div>
   );
 }
