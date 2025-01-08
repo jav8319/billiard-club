@@ -190,7 +190,7 @@ function BilliardClubApp() {
       </div>
       <div className="mb-4 px-2 ">
         <div className="d-flex justify-content-between">
-          <h3>Players</h3>
+          <h3>Players:</h3>
           {lastMatch.length === 2 && (
             <div className="d-flex flex-column justify-content-between">
               <div>
@@ -222,6 +222,9 @@ function BilliardClubApp() {
             </li>
           ))}
         </ul>
+        {playersRecord.length===0&&<div className='placeholderdiv'>
+          <p>"No players added"</p>
+        </div>}
       </div>
       {showModal&&playersRecord.length>2&&
         <div>
