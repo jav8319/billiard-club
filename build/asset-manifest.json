@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/billiard-club/static/css/main.c6465053.css",
-    "main.js": "/billiard-club/static/js/main.6433b454.js",
+    "main.css": "/billiard-club/static/css/main.d3988096.css",
+    "main.js": "/billiard-club/static/js/main.9cf8ac2f.js",
     "static/js/453.9c21c73f.chunk.js": "/billiard-club/static/js/453.9c21c73f.chunk.js",
     "index.html": "/billiard-club/index.html",
-    "main.c6465053.css.map": "/billiard-club/static/css/main.c6465053.css.map",
-    "main.6433b454.js.map": "/billiard-club/static/js/main.6433b454.js.map",
+    "main.d3988096.css.map": "/billiard-club/static/css/main.d3988096.css.map",
+    "main.9cf8ac2f.js.map": "/billiard-club/static/js/main.9cf8ac2f.js.map",
     "453.9c21c73f.chunk.js.map": "/billiard-club/static/js/453.9c21c73f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6465053.css",
-    "static/js/main.6433b454.js"
+    "static/css/main.d3988096.css",
+    "static/js/main.9cf8ac2f.js"
   ]
 }
