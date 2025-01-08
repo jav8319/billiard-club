@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import image1 from'../assets/alworking.gif';
 
 function About() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -14,6 +15,9 @@ function About() {
         className="card"
         style={{ backgroundColor: '#2c2c2e', color: 'white', borderColor: '#f0ad4e', padding: '15px' }}
       >
+            <div className='d-flex justify-content-center'>
+      <img src={image1} className='imgal' alt="billiard app algorith" style={{marginBottom:'20px'}}/>
+      </div>
          <h5 className='mb-3 mx-4'>About This App</h5>
         <p>
           The <strong>Billiard Club App</strong> is designed to make billiard games more organized and enjoyable.

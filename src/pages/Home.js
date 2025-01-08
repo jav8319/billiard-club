@@ -4,6 +4,7 @@ import startMatchOrder from '../utils/startMatchOrder';
 import updtRcrdsFromMatch from '../utils/updtRcrdsFromMatch';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../assets/subtitle2.gif';
+
 import About from '../components/About';
 import setLastMatchFunc from '../utils/setLastMatchFunc';
 import DialogBox1stMtch from '../components/DialogBox1stMtch';
@@ -171,7 +172,7 @@ function BilliardClubApp() {
               />
               <h3 className="div3">{match[0].player.plyr}</h3>
             </div>
-            <h2 className="vselement">--vs--</h2>
+            <h2 className="vselement"><span style={{opacity:'0'}}>--</span>vs<span style={{opacity:'0'}}>--</span></h2>
             <div className="customcheckbox">
               <input
                 type="checkbox"
@@ -226,6 +227,7 @@ function BilliardClubApp() {
           <p>"No players added"</p>
         </div>}
       </div>
+  
       {showModal&&playersRecord.length>2&&
         <div>
           <DialogBox1stMtch

@@ -262,4 +262,9 @@ position: relative;
   }
 }
 
+@media (max-width:335px) {
+  .imgal{
+    width: 100%;
+  }
+}
 
