@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import image1 from'../assets/alworking.gif';
 
-function About() {
+const About:React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleReadMore = () => {

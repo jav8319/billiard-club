@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {addPlayer,removePlayerUtil,updateMatchArr} from '../utils/utilsfuncs';
 import startMatchOrder from '../utils/startMatchOrder';
 import updtRcrdsFromMatch from '../utils/updtRcrdsFromMatch';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from '../assets/subtitle2.gif';
-
+import { Player, Match,LastMatch } from '../types';
 import About from '../components/About';
 import setLastMatchFunc from '../utils/setLastMatchFunc';
 import DialogBox1stMtch from '../components/DialogBox1stMtch';
 
-function BilliardClubApp() {
+
+const BilliardClubApp: React.FC = () => {
   const [plyr, setplyr] = useState('');
 
-  const [lastMatch, setLastMatch] = useState(() => {
+  const [lastMatch, setLastMatch] = useState<LastMatch[]>(() => {
     const savedLastMatch = localStorage.getItem('lastMatchxxx');
     return savedLastMatch ? JSON.parse(savedLastMatch) : [];
   });
 
-  const [playersRecord, setPlayersRecord] = useState(() => {
+  const [playersRecord, setPlayersRecord] = useState<Player[]>(() => {
     const savedPlayersRecord = localStorage.getItem('playersRecordxx');
     return savedPlayersRecord ? JSON.parse(savedPlayersRecord) : [];
   });
 
-  const [match, setMatch] = useState(() => {
+  const [match, setMatch] = useState<Match[]>(() => {
     const savedMatch = localStorage.getItem('matchxx');
     return savedMatch ? JSON.parse(savedMatch) : [];
   });
@@ -49,7 +50,7 @@ function BilliardClubApp() {
     }
   };
 
-  const removePlayer = (player) => {
+  const removePlayer = (player:Player) => {
     const mynewrecords = removePlayerUtil(player, playersRecord);
     setPlayersRecord(mynewrecords);
     localStorage.setItem('playersRecordxx', JSON.stringify(mynewrecords));
@@ -60,7 +61,7 @@ function BilliardClubApp() {
       alert("At least two players are required to start a match!");
       return;
     }
-    const totalpys = playersRecord.reduce((acc, player) => acc + player.pys, 0);
+    const totalpys: number = playersRecord.reduce((acc,player) => acc + player.pys, 0);
     if (totalpys === 0 && playersRecord.length > 2) {
       setShowModal(true);
     } else {
@@ -70,7 +71,7 @@ function BilliardClubApp() {
     }
   };
 
-  const handleWinnerChange = (winnerIndex) => {
+  const handleWinnerChange = (winnerIndex:number) => {
     const getuptodatematch = updateMatchArr(playersRecord, match);
     const updatedMatch = getuptodatematch.map((entry, index) => {
       if (index === winnerIndex) {

@@ -3,18 +3,14 @@ import BilliardClubApp from './pages/Home';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
-
-function App() {
-
+const App: React.FC = () => {
   return (
-
-    <div className='bodydiv'>
-      <Header/>
-      < BilliardClubApp />
-      <Footer/>
+    <div className="bodydiv">
+      <Header />
+      <BilliardClubApp />
+      <Footer />
     </div>
-   
   );
-}
+};
 
 export default App;
