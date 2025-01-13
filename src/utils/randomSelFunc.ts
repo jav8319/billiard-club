@@ -1,7 +1,5 @@
 import { Player,Match} from '../types';
 
-
-
 const randomSelFunc = (playersRecord:Player[]):Match[] => {
   const shuffledPlayers = [...playersRecord].sort(() => 0.5 - Math.random());
   const selectedPlayers = shuffledPlayers.slice(0, 2);

@@ -47,13 +47,12 @@ export const addPlayer = (plyr: string, playersRecord: Player[]): Player[] => {
     // Filter out the player to be removed from the playersRecord
     const updatedPlayersRecord = playersRecord.filter(p => p.plyr !== player.plyr);
   
-    // Update each player's `allOps` property
     return updatedPlayersRecord.map(playermp => {
-      // Create a list of remaining players' names
+     
       const allOtherOpponents = updatedPlayersRecord.map(otherPlayer => otherPlayer.plyr);
   
       if (playermp.allOps.length > 0) {
-        // Filter out opponents that are no longer in the updatedPlayersRecord
+   
         const validOpponents = playermp.allOps.filter(op => allOtherOpponents.includes(op));
   
         return {

@@ -25,12 +25,12 @@ const setLastMatchFunc = (match: Match[], lastMatch: LastMatch[]): LastMatch[] =
     const winner = match.find((entry) => entry.score === 1)?.player;
     const loser = match.find((entry) => entry.score === 0)?.player;
 
-    // Ensure winner and loser are defined
+   
     if (!winner || !loser) {
       throw new Error("Winner or loser not found in match data.");
     }
 
-    // Create a new LastMatch entry
+  
     const newEntry: LastMatch = {
       winner: winner.plyr,
       loser: loser.plyr,
